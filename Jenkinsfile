@@ -24,7 +24,7 @@ spec:
   node(POD_LABEL) {    
     stage('Building Image with Kaniko') {
       container('kaniko') {
-          sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --context=git://github.com/VF-mbrauer/base-image --destination=maikbrauer/base-image:1.0.0'
+          sh '/kaniko/executor --context=git://github.com/VF-mbrauer/base-image --destination=maikbrauer/base-image:1.0.0'
       }
     }
   }
